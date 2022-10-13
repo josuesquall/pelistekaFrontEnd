@@ -1,0 +1,24 @@
+<h6>Peliculas</h6>
+<div class="toolsbar">
+    <label class="camp4"><input type="text" placeholder="Buscar por titulo..." id="stitulo" (change)="searchMovies();" /></label>
+    <label class="camp4"><select id="slimit" (change)="searchMovies();"><option value="10">Limite 10</option><option value="20">Limite 20</option><option value="30">Limite 30</option></select></label>
+    <label class="camp4"><input type="button" value="anterior" (click)="searchMovies();" /></label>
+    <label class="camp4"><input type="button" value="siguiente" (click)="searchMovies();" /></label>
+</div>
+<div class="catalogo">
+<div *ngFor="let movie of movies">
+    <div class="movie">
+        <div class="image">
+            <img src="https://image.tmdb.org/t/p/original{{ movie.metaData.backdrop_path }}"/>
+        </div>
+        <div class="data">
+            <h3>{{ movie.metaData.title }}</h3>
+            <p>{{ movie.metaData.overview.substr(0, 150) }}...</p>
+            <div class="other-option">
+                <a class="default-btn-one" (click)="movieDetails(movie);">Detalles<span></span></a>
+            </div>
+        </div>
+    </div>
+</div>   
+</div>
+

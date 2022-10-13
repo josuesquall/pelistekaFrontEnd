@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://pelisteka.nirvaria",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

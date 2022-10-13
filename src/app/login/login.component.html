@@ -1,0 +1,19 @@
+<div  *ngIf="user == 0">
+    <FORM id="formLogIn" autocomplete="off">
+    <label class="camp">
+      <INPUT TYPE='TEXT' placeholder="Correo Electronico" name='email' required>
+    </label>
+    <label class="camp">
+      <INPUT TYPE='password' placeholder="Contraseña" name='password' required>
+    </label>
+    <label class="camp">
+      <input type="submit" class="default-btn" value="Iniciar" (click)="GetLogin();" />
+    </label>
+    <a class="default-btn" (click)="OpenRegistro();" >Registrate<span></span></a>
+  </FORM>
+  <div id="resLoginMsj"></div>
+</div>
+<div  *ngIf="user > 0">
+    <a class="default-btn" (click)="DownLogin();" >Cerrar Session<span></span></a>
+</div>
+

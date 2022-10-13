@@ -1,0 +1,18 @@
+.toolsbar{
+    height: 75px;
+    width: 100%;
+}
+.catalogo{
+
+}
+.movie{
+    width: 350px;
+    height: 500px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin:5px;
+    float: left;
+}
+.movie .data{
+    padding: 10px;
+}

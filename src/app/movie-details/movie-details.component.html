@@ -1,0 +1,53 @@
+<div class="posterMovie"><img src="https://image.tmdb.org/t/p/original{{ movie.metaData.poster_path }}"/></div>
+<div class="detailsData">
+    <label class="camp2"><h3>{{movie.metaData.title}}</h3></label>
+    <label class="camp2"><div class="other-option">
+        <a class="nav-link" (click)="closeDetails();">Cerrar<span></span></a>
+    </div></label>
+    <p>{{ movie.metaData.overview }}...</p>
+    <div *ngIf="user > 0">
+        <label class="camp2">Mis Favoritos
+            <div class="other-option" *ngIf="movie.favorite==0">
+                <a class="default-btn" (click)="addFavorites();">Agregar Favoritos<span></span></a>
+            </div>
+            <div class="other-option" *ngIf="movie.favorite>0">
+                Me Gusta!
+            </div>
+        </label>
+        <label class="camp2" *ngIf="movie.score>0">Rating: {{ movie.score }}</label>
+        <label class="camp2" *ngIf="movie.score==0">
+            <label class="camp">Rating:
+               <select id="selectScore" (change)="setScore();">
+                    <option value="0">Califica</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> 
+            </label> 
+        </label>
+        <div>
+            <div class="comentarios">
+                <div class="oneText" *ngFor="let comentario of comentarios">
+                    <p><span>{{ comentario.text }}</span><br/>
+                        {{ comentario.nameUser }}<br/>
+                        {{ comentario.ts }}
+                    </p>
+                </div>
+            </div>
+            <div class="formComentario">
+                <form id="formComment" autocomplete="off">
+                    <label class="camp">
+                        <INPUT TYPE='text' placeholder="Comentario" name='comenario' id="textComentario" required>
+                    </label>
+                    <label class="camp">
+                        <input type="submit" class="default-btn" value="Comentar" (click)="saveComment();" />
+                    </label>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
